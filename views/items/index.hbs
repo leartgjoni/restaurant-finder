@@ -1,0 +1,17 @@
+<div class="row">
+    <a class="btn btn-success" href="/items/create">Create</a>
+</div>
+<div class="row">
+
+    {{#each items}}
+    <div class="col-md-4 text-center">
+        <h2>{{name}}</h2>
+        <img src="/images/uploads/{{image}}" height="150px" /><br/>
+        <p>{{description}}</p>
+        <h3>{{price}}$</h3>
+        <a href="/items/{{_id}}" class="btn btn-default">Edit</a>
+        <a href="/items/delete/{{_id}}" class="btn btn-danger">Delete</a>
+    </div>
+    {{/each}}
+
+</div>

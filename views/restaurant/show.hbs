@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-8">
+        <img src="/images/uploads/{{restaurant.image}}" height=200 /><br>
+        <h3>{{restaurant.name}}</h3>
+        <h5>{{restaurant.address}}</h5>
+        <p>{{restaurant.description}}</p>
+    </div>
+    <div class="col-md-4">
+        {{# each restaurant.items }}
+            <div class="well">
+                <h4>{{name}}</h4>
+                <img src="/images/uploads/{{image}}" height="100px"/>
+                <a class="btn btn-default" href="/cart/add/{{_id}}">Add</a>
+            </div>
+        {{/each}}
+        <a href="/cart/check-out/{{restaurant._id}}">Check out</a>
+    </div>
+</div>

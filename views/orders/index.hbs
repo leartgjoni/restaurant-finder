@@ -1,0 +1,19 @@
+<div class="row">
+
+    {{#each orders}}
+        <div class="col-md-8 text-center">
+            <h2>{{address}}</h2>
+            <h2>{{cel}}</h2>
+            {{#each cart.itemsGroup}}
+                <h4>{{item.name}} x {{qty}} x ${{item.price}} = ${{price}}</h4>
+            {{/each}}
+            <h2>${{cart.totalPrice}}</h2>
+        </div>
+        <div class="col-md-4">
+            {{# unless done }}
+                <a href="/orders/{{_id}}" class="btn btn-default">Done</a>
+            {{/unless}}
+        </div>
+    {{/each}}
+
+</div>

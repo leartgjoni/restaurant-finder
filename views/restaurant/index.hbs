@@ -1,0 +1,15 @@
+<div class="container-fluid bg-3 text-center">
+    <h3>Restaurants near you</h3><br>
+    <div class="row">
+        {{# each restaurants}}
+            <div class="col-sm-4">
+                <p>{{obj.name}}</p>
+                <img src="/images/uploads/{{obj.image}}" class="img-responsive" style="width:100%; height: 200px;"  alt="Image">
+                <p>{{obj.address}}</p>
+                <p>{{obj.description}}</p>
+                <p>{{roundDistance dis}}m from you</p>
+                <a href="/restaurants/{{obj._id}}">Order Food</a>
+            </div>
+        {{/each}}
+    </div>
+</div><br>

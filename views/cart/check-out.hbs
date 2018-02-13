@@ -1,0 +1,40 @@
+<br/><br/><br/>
+{{# if items }}
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <ul class="list-group">
+                {{# each items }}
+                    <li class="list-group-item">
+                        <span class="badge">{{qty}}</span>
+                        <strong>{{item.name}}</strong>
+                        <span class="label label-success">${{price}}</span>
+                        <div class="btn-group">
+                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action<span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/cart/reduce/{{item._id}}">Reduce by 1</a></li>
+                                <li><a href="/cart/remove-item/{{item._id}}">Remove All</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <strong>Total: ${{totalPrice}}</strong>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <a href="/orders/store/{{restaurant_id}}" class="btn btn-success">Create Order</a>
+        </div>
+    </div>
+{{else}}
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <h2>No items in cart.</h2>
+        </div>
+    </div>
+{{/if}}
